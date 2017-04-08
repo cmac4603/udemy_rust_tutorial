@@ -4,6 +4,7 @@ mod sh;
 mod if_exp;
 mod while_loops;
 mod for_loops;
+mod matches;
 use std::mem;
 
 const MEANING_OF_LIFE:i8 = 42; // no fixed address
@@ -104,5 +105,6 @@ fn main() {
     //sh::stack_and_heap();
     //if_exp::if_statement();
     //while_loops::while_and_loop();
-    for_loops::for_loop();
+    //for_loops::for_loop();
+    matches::match_statement();
 }

@@ -3,6 +3,7 @@
 mod sh;
 mod if_exp;
 mod while_loops;
+mod for_loops;
 use std::mem;
 
 const MEANING_OF_LIFE:i8 = 42; // no fixed address
@@ -102,5 +103,6 @@ fn main() {
     //println!("{}", Z_TWO);
     //sh::stack_and_heap();
     //if_exp::if_statement();
-    while_loops::while_and_loop()
+    //while_loops::while_and_loop();
+    for_loops::for_loop();
 }

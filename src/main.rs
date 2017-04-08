@@ -2,6 +2,7 @@
 #![allow(dead_code)]
 mod sh;
 mod if_exp;
+mod while_loops;
 use std::mem;
 
 const MEANING_OF_LIFE:i8 = 42; // no fixed address
@@ -98,7 +99,8 @@ fn main() {
     //    Z_TWO = 125;
     //    println!("{}", Z_TWO);
     //}
-    // println!("{}", Z_TWO);
+    //println!("{}", Z_TWO);
     //sh::stack_and_heap();
-    if_exp::if_statement();
+    //if_exp::if_statement();
+    while_loops::while_and_loop()
 }

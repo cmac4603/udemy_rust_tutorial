@@ -1,5 +1,5 @@
 pub fn if_statement() {
-    let temp = 15;
+    let temp = 35;
 
     if temp > 30 {
         println!("really hot outside");
@@ -16,4 +16,9 @@ pub fn if_statement() {
 
     println!("it is {}",
         if temp > 20 {"hot"} else if temp < 10 {"cold"} else {"ok"});
+
+    println!("it is {}",
+        if temp > 20 {
+            if temp > 30 {"very hot"} else {"hot"}
+        } else if temp < 10 {"cold"} else {"OK"});
 }

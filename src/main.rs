@@ -25,6 +25,29 @@ fn enums() {
     }
 }
 
+fn option() {
+    // Option<T>
+
+    let x = 3.0;
+    let y = 0.0;
+
+    // option can be Some(z) or None
+
+    let result:Option<f64> =
+        if y != 0.0 { Some(x/y) } else {None};
+
+    println!("{:?}", result);
+
+    match result {
+        Some(z) => println!("{}/{} = {}", x, y , z),
+        None => println!("Cannot divide {} by {}", x, y),
+    }
+
+    // if let / while let
+    if let Some(z) = result { println!("z = {}", z); };
+}
+
 fn main () {
-    enums();
+    //enums();
+    option();
 }

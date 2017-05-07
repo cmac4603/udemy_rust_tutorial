@@ -198,11 +198,47 @@ fn strings() {
     println!("{}", abc.replace("ello", "goodbye"));
 }
 
+fn sum_and_product(x: i32, y:i32) -> (i32, i32)  {
+    // arrays all have to be of the same type
+    // tuples can be a mismatch of types
+    (x+y, x*y)
+}
+
+fn tuples() {
+    let x = 3;
+    let y = 4;
+    let sp = sum_and_product(x,y);
+    println!("sp = {:?}", sp);
+    println!("{0} + {1} = {2}, {0} * {1} = {3}", x, y, sp.0, sp.1);
+
+    // destructuring
+    let (a, b) = sp;
+    println!("a = {}, b = {}", a, b);
+
+    let sp2 = sum_and_product(4, 7);
+    let combined = (sp, sp2);
+    println!("{:?}", combined);
+    println!("last elem = {}", (combined.1).1);
+
+    // destructuring again
+    let ((c,d),(e,f)) = combined;
+    println!("{} {} {} {}", c, d, e, f);
+
+    // mismatched tuple
+    let foo = (true, 42.0, -1i8);
+    println!("mismatched foo = {:?}", foo);
+
+    // single element tuple
+    let meaning = (42,);
+    println!("{:?}", meaning);
+}
+
 fn main () {
     //enums();
     //option();
     //arrays();
     // vectors();
     // slices();
-    strings();
+    // strings();
+    tuples();
 }

@@ -139,9 +139,24 @@ fn vectors() {
     }
 }
 
+fn use_slice(slice: &mut[i32]) {
+    println!("first elem in slice = {}, len of slice = {}",
+             slice[0], slice.len());
+    slice[0] = 4321;
+}
+
+fn slices() {
+    let mut data = [1,2,3,4,5];
+
+    use_slice(&mut data[1..4]);
+    // use_slice(&mut data);
+    println!("returned data array is: {:?}", data)
+}
+
 fn main () {
     //enums();
     //option();
     //arrays();
-    vectors();
+    // vectors();
+    slices();
 }

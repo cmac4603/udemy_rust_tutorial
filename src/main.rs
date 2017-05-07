@@ -155,6 +155,7 @@ fn slices() {
 
 fn strings() {
     // utf-8
+    // &'static sets the lifetime of s to live for the entire life of the program
     let s:&'static str = "hello there!"; // &str = static string
     println!("{}", s);
 

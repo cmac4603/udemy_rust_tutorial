@@ -153,10 +153,55 @@ fn slices() {
     println!("returned data array is: {:?}", data)
 }
 
+fn strings() {
+    // utf-8
+    let s:&'static str = "hello there!"; // &str = static string
+    println!("{}", s);
+
+    // &'static str cannot be manipulated by this
+    // let s = 'abc';
+    // below doesn't work because you would be trying to index the bytes
+    // let h = s[0];
+
+    for c in s.chars().rev() {
+        println!("{}", c);
+    }
+
+    if let Some(first_char) = s.chars().nth(0) {
+        println!("first character of s is {}", first_char);
+    }
+
+    // String - a heap allocated construct
+    let mut letters = String::new();
+    let mut a = 'a' as u8;
+    println!("a as u8 = {}", a);
+    while a <= ('z' as u8) {
+        letters.push(a as char);
+        letters.push_str(",");
+        a += 1;
+    }
+
+    println!("{}", letters);
+
+    // &str < > String
+    let u:&str = &letters;
+    println!("{}", u);
+
+    let z = u.to_owned() + u;
+    println!("{}", z);
+
+    // let mut abc = String::from("hello world");
+    let mut abc = "hello world".to_string();
+    abc.remove(0);
+    abc.push_str("!!!");
+    println!("{}", abc.replace("ello", "goodbye"));
+}
+
 fn main () {
     //enums();
     //option();
     //arrays();
     // vectors();
-    slices();
+    // slices();
+    strings();
 }

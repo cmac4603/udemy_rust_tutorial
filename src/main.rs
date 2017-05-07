@@ -1,6 +1,7 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 use std::mem;
+mod pm;
 
 enum Color {
     Red,
@@ -234,11 +235,12 @@ fn tuples() {
 }
 
 fn main () {
-    //enums();
-    //option();
-    //arrays();
+    // enums();
+    // option();
+    // arrays();
     // vectors();
     // slices();
     // strings();
-    tuples();
+    // tuples();
+    pm::pattern_matching();
 }

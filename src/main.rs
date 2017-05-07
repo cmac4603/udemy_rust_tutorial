@@ -88,8 +88,60 @@ fn arrays() {
     }
 }
 
+fn vectors() {
+    let mut a = Vec::new();
+    a.push(1);
+    a.push(2);
+    a.push(3);
+
+    println!("a = {:?}", a);
+
+    a.push(44);
+    println!("a = {:?}", a);
+    
+    let idx:usize = 0;
+    a[idx] = 321;
+    println!("a[0] = {:?}", a[idx]);
+
+    // .get() on vector returns Option
+    // match a.get(6) {
+    match a.get(3) {
+        Some(x) => println!("a[4] = {}", x),
+        None => println!("error no such element"),
+    }
+
+    for x in &a {
+        println!("{}", x);
+    }
+
+    a.push(77);
+    println!("{:?}", a);
+
+    let last_elem = a.pop(); // Option
+    println!("{:?}", last_elem); // Some(x) if vector not empty
+    println!("last_elem is {:?}, left with vector a = {:?}", last_elem, a); // Some(x) if vector not empty
+
+    // let last_elem = a.pop(); // Option
+    // let last_elem = a.pop(); // Option
+    // let last_elem = a.pop(); // Option
+    // let last_elem = a.pop(); // Option
+    // let last_elem = a.pop(); // Option
+
+    // match last_elem {
+    //     Some(x) => println!("{}", x),
+    //     None => println!("vector a is empty"),
+    // }
+
+    // how to iterate over Option returns,
+    // this will fail when a.pop() returns None
+    while let Some(x) = a.pop() {
+        println!("In Some(x), x = {}", x);
+    }
+}
+
 fn main () {
     //enums();
     //option();
-    arrays();
+    //arrays();
+    vectors();
 }

@@ -119,7 +119,7 @@ fn hof() {
     }
     println!("loop sum = {}", sum);
 
-    // more functional programming using primitives
+    // more functional programming using HOFs
     let sum2 =
         (0..).map(|x| x*x)
              .take_while(|&x| x <= limit)

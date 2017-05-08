@@ -67,8 +67,45 @@ fn methods() {
     println!("length = {}", myline.len());
 }
 
+fn say_hello() {
+    println!("hello");
+}
+
+fn closures() {
+    let sh = say_hello;
+    sh();
+
+    let plus_one = |x: i32| -> i32 { x + 1 };
+    let a = 6;
+    println!("{} + 1 = {}", a, plus_one(6));
+
+    let mut two = 2;
+    let plus_two = |x| {
+        let mut z = x;
+        z += 2;
+        z
+    };
+    println!("{} + 2 = {}", 3, plus_two(3));
+
+    let borrow_two = &mut two;
+
+    // T: by value
+    // T&
+    // &mut &
+    // here, plus_three messes with immutable f,
+    // but print statement would return 12 as
+    // original var is not affected
+    // let plus_three = |mut x: i32| { x += 3 };
+    // here we change f
+    let plus_three = |x: &mut i32| { *x += 3 };
+    let mut f = 12;
+    plus_three(&mut f);
+    println!("f = {}", f);
+}
+
 fn main() {
     // generics();
     // functions();
-    methods();
+    // methods();
+    closures();
 }
